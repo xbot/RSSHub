@@ -1266,6 +1266,9 @@
   "/bupt/scss/tzgg": [
     "ziri2004"
   ],
+  "/bvisness/blog": [
+    "raxod502"
+  ],
   "/bwsg*": [
     "sk22"
   ],
@@ -1815,6 +1818,12 @@
   ],
   "/cockroachlabs/blog/:category?": [
     "CookiePieWw"
+  ],
+  "/codefather/posts/:category?/:sort?": [
+    "JackyST0"
+  ],
+  "/codefather/questions/:sort?": [
+    "JackyST0"
   ],
   "/codeforces/contests": [
     "Fatpandac"
@@ -3236,6 +3245,18 @@
   ],
   "/gamme/:domain/:category?": [],
   "/gamme/:domain/tag/:tag": [],
+  "/ganjingworld/channel/articles/:id": [
+    "yixiangli2001"
+  ],
+  "/ganjingworld/channel/posts/:id": [
+    "yixiangli2001"
+  ],
+  "/ganjingworld/channel/shorts/:id": [
+    "yixiangli2001"
+  ],
+  "/ganjingworld/channel/videos/:id": [
+    "yixiangli2001"
+  ],
   "/gaoyu/blog": [
     "nczitzk"
   ],
@@ -6598,7 +6619,7 @@
   "/people/xjpjh/:keyword?/:year?": [],
   "/peopo/topic/:topicId?": [],
   "/perplexity/changelog": [
-    "sisyphus"
+    "xbot"
   ],
   "/phoronix/:category?/:topic?": [
     "oppliate",
@@ -7696,6 +7717,9 @@
   "/skysports/news/:team": [
     "nczitzk"
   ],
+  "/slashdot/:section?": [
+    "TonyRL"
+  ],
   "/slowmist/:type?": [
     "AtlasQuan"
   ],
@@ -8588,6 +8612,9 @@
   ],
   "/tynu/": [
     "2PoL"
+  ],
+  "/typeless/changelog": [
+    "TonyRL"
   ],
   "/typora/changelog/dev": [
     "nczitzk"

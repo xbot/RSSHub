@@ -20055,6 +20055,34 @@ export default {
     "url": "bupt.edu.cn",
     "lang": "zh-CN"
   },
+  "bvisness": {
+    "routes": {
+      "/blog": {
+        "name": "Blog",
+        "categories": [
+          "blog"
+        ],
+        "maintainers": [
+          "raxod502"
+        ],
+        "path": "/blog",
+        "example": "/bvisness/blog",
+        "radar": [
+          {
+            "source": [
+              "bvisness.me"
+            ],
+            "target": "/blog"
+          }
+        ],
+        "location": "blog.ts",
+        "module": () => import('@/routes/bvisness/blog.ts')
+      }
+    },
+    "name": "Ben Visness",
+    "apiRoutes": {},
+    "url": "bvisness.me"
+  },
   "bwsg": {
     "routes": {
       "*": {
@@ -28421,6 +28449,82 @@ export default {
     "apiRoutes": {},
     "url": "cockroachlabs.com",
     "lang": "en"
+  },
+  "codefather": {
+    "routes": {
+      "/posts/:category?/:sort?": {
+        "path": "/posts/:category?/:sort?",
+        "categories": [
+          "programming"
+        ],
+        "example": "/codefather/posts",
+        "parameters": {
+          "category": "分类，可选 `交流`、`学习`、`项目`、`资源`、`经验`，默认为全部",
+          "sort": "排序方式，可选 `new`（最新）、`hot`（热门）、`recommend`（推荐），默认为 `new`"
+        },
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "radar": [
+          {
+            "source": [
+              "www.codefather.cn/",
+              "www.codefather.cn"
+            ],
+            "target": "/posts"
+          }
+        ],
+        "name": "帖子",
+        "maintainers": [
+          "JackyST0"
+        ],
+        "description": "获取编程导航社区的帖子，支持按热门、最新、推荐排序，支持按分类筛选。",
+        "location": "posts.ts",
+        "module": () => import('@/routes/codefather/posts.ts')
+      },
+      "/questions/:sort?": {
+        "path": "/questions/:sort?",
+        "categories": [
+          "programming"
+        ],
+        "example": "/codefather/questions",
+        "parameters": {
+          "sort": "排序方式，可选 `new`（最新）、`hot`（热门），默认为 `new`"
+        },
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "radar": [
+          {
+            "source": [
+              "www.codefather.cn/qa",
+              "www.codefather.cn"
+            ],
+            "target": "/questions"
+          }
+        ],
+        "name": "问答",
+        "maintainers": [
+          "JackyST0"
+        ],
+        "description": "获取编程导航社区的问答内容，支持按最新、热门排序。",
+        "location": "questions.ts",
+        "module": () => import('@/routes/codefather/questions.ts')
+      }
+    },
+    "name": "编程导航",
+    "url": "www.codefather.cn",
+    "description": "编程导航是一个编程学习交流社区，由程序员鱼皮创建，提供学习路线、项目教程、求职攻略、技术交流等内容。"
   },
   "codeforces": {
     "routes": {
@@ -45654,6 +45758,147 @@ export default {
     "apiRoutes": {},
     "url": "news.gamme.com.tw",
     "lang": "zh-TW"
+  },
+  "ganjingworld": {
+    "routes": {
+      "/channel/articles/:id": {
+        "path": "/channel/articles/:id",
+        "categories": [
+          "social-media"
+        ],
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "example": "/ganjingworld/channel/articles/1fcahpcut9t3gz4zIvYSJR7qd1cs0c",
+        "parameters": {
+          "id": "Channel ID, can be found in channel url"
+        },
+        "radar": [
+          {
+            "source": [
+              "ganjingworld.com"
+            ],
+            "target": "/channel/articles/:id"
+          }
+        ],
+        "url": "www.ganjingworld.com",
+        "name": "Articles in a channel",
+        "maintainers": [
+          "yixiangli2001"
+        ],
+        "location": "channel/articles.ts",
+        "module": () => import('@/routes/ganjingworld/channel/articles.ts')
+      },
+      "/channel/posts/:id": {
+        "path": "/channel/posts/:id",
+        "categories": [
+          "social-media"
+        ],
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "example": "/ganjingworld/channel/posts/1fcahpcut9t3gz4zIvYSJR7qd1cs0c",
+        "parameters": {
+          "id": "Channel ID, can be found in channel url"
+        },
+        "radar": [
+          {
+            "source": [
+              "ganjingworld.com"
+            ],
+            "target": "/channel/posts/:id"
+          }
+        ],
+        "url": "www.ganjingworld.com",
+        "name": "posts in a channel",
+        "maintainers": [
+          "yixiangli2001"
+        ],
+        "location": "channel/posts.ts",
+        "module": () => import('@/routes/ganjingworld/channel/posts.ts')
+      },
+      "/channel/shorts/:id": {
+        "path": "/channel/shorts/:id",
+        "categories": [
+          "social-media"
+        ],
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "example": "/ganjingworld/channel/shorts/1fq5chh3ajo67UNu14uAvfzOp1a80c",
+        "parameters": {
+          "id": "Channel ID, can be found in channel url"
+        },
+        "radar": [
+          {
+            "source": [
+              "ganjingworld.com"
+            ],
+            "target": "/channel/shorts/:id"
+          }
+        ],
+        "url": "www.ganjingworld.com",
+        "name": "Shorts in a channel",
+        "maintainers": [
+          "yixiangli2001"
+        ],
+        "location": "channel/shorts.ts",
+        "module": () => import('@/routes/ganjingworld/channel/shorts.ts')
+      },
+      "/channel/videos/:id": {
+        "path": "/channel/videos/:id",
+        "categories": [
+          "social-media"
+        ],
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "example": "/ganjingworld/channel/videos/1eiqjdnq7go1OPYtIbLDVMpM61ok0c",
+        "parameters": {
+          "id": "Channel ID, can be found in channel url"
+        },
+        "radar": [
+          {
+            "source": [
+              "ganjingworld.com"
+            ],
+            "target": "/channel/videos/:id"
+          }
+        ],
+        "url": "www.ganjingworld.com",
+        "name": "Videos in a channel",
+        "maintainers": [
+          "yixiangli2001"
+        ],
+        "location": "channel/videos.ts",
+        "module": () => import('@/routes/ganjingworld/channel/videos.ts')
+      }
+    },
+    "name": "Ganjing World",
+    "apiRoutes": {},
+    "url": "www.ganjingworld.com/",
+    "description": "\"Gan Jing\" means Clean. Through the utilization of technology, Gan Jing World is dedicated to revitalizing traditional connections—fostering a culture of care, kindness, mutual respect, and trust among individuals, within families, and throughout society.",
+    "lang": "en"
   },
   "gaoyu": {
     "routes": {
@@ -95340,7 +95585,7 @@ export default {
         "name": "Changelog",
         "url": "www.perplexity.ai",
         "maintainers": [
-          "sisyphus"
+          "xbot"
         ],
         "example": "/perplexity/changelog",
         "description": "Subscribe to Perplexity changelog for latest updates and releases.",
@@ -108508,6 +108753,73 @@ export default {
     },
     "name": "Sky Sports",
     "url": "skysports.com",
+    "lang": "en"
+  },
+  "slashdot": {
+    "routes": {
+      "/:section?": {
+        "path": "/:section?",
+        "categories": [
+          "new-media"
+        ],
+        "example": "/slashdot",
+        "parameters": {
+          "section": "Section name, can be found in the URL host, leave empty for the main page"
+        },
+        "radar": [
+          {
+            "source": [
+              "slashdot.org"
+            ]
+          },
+          {
+            "source": [
+              "devices.slashdot.org"
+            ],
+            "target": "/devices"
+          },
+          {
+            "source": [
+              "build.slashdot.org"
+            ],
+            "target": "/build"
+          },
+          {
+            "source": [
+              "entertainment.slashdot.org"
+            ],
+            "target": "/entertainment"
+          },
+          {
+            "source": [
+              "technology.slashdot.org"
+            ],
+            "target": "/technology"
+          },
+          {
+            "source": [
+              "science.slashdot.org"
+            ],
+            "target": "/science"
+          },
+          {
+            "source": [
+              "yro.slashdot.org"
+            ],
+            "target": "/yro"
+          }
+        ],
+        "name": "News",
+        "maintainers": [
+          "TonyRL"
+        ],
+        "location": "index.ts",
+        "module": () => import('@/routes/slashdot/index.ts')
+      }
+    },
+    "name": "Slashdot",
+    "apiRoutes": {},
+    "url": "slashdot.org",
     "lang": "en"
   },
   "slowmist": {
@@ -122719,6 +123031,37 @@ export default {
     "name": "太原师范学院",
     "url": "tynu.edu.cn",
     "lang": "zh-CN"
+  },
+  "typeless": {
+    "routes": {
+      "/changelog": {
+        "path": "/changelog",
+        "example": "/typeless/changelog",
+        "categories": [
+          "program-update"
+        ],
+        "radar": [
+          {
+            "source": [
+              "www.typeless.com/help/release-notes/*",
+              "www.typeless.com/help/release-notes",
+              "www.typeless.com"
+            ]
+          }
+        ],
+        "name": "Changelog",
+        "maintainers": [
+          "TonyRL"
+        ],
+        "url": "www.typeless.com/help/release-notes",
+        "location": "changelog.ts",
+        "module": () => import('@/routes/typeless/changelog.ts')
+      }
+    },
+    "name": "Typeless",
+    "apiRoutes": {},
+    "url": "typeless.com",
+    "lang": "en"
   },
   "typora": {
     "routes": {
