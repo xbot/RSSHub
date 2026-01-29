@@ -32173,6 +32173,114 @@
     ],
     "lang": "en"
   },
+  "dailypush": {
+    "routes": {
+      "/:sort?": {
+        "path": "/:sort?",
+        "categories": [
+          "programming"
+        ],
+        "example": "/dailypush/latest",
+        "parameters": {
+          "sort": {
+            "description": "Sort order: `` (trending, default) or `latest`",
+            "default": "",
+            "options": [
+              {
+                "value": "",
+                "label": "Trending"
+              },
+              {
+                "value": "latest",
+                "label": "Latest"
+              }
+            ]
+          }
+        },
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "radar": [
+          {
+            "source": [
+              "dailypush.dev/",
+              "dailypush.dev/latest"
+            ],
+            "target": "/"
+          }
+        ],
+        "name": "All",
+        "maintainers": [
+          "TheGeeKing"
+        ],
+        "location": "all.ts",
+        "module": "() => import('@/routes/dailypush/all.ts')"
+      },
+      "/tag/:tag/:sort?": {
+        "path": "/tag/:tag/:sort?",
+        "categories": [
+          "programming"
+        ],
+        "example": "/dailypush/tag/backend/trending",
+        "parameters": {
+          "tag": {
+            "description": "Tag name"
+          },
+          "sort": {
+            "description": "Sort order: `trending` (default) or `latest`",
+            "default": "trending",
+            "options": [
+              {
+                "value": "trending",
+                "label": "Trending"
+              },
+              {
+                "value": "latest",
+                "label": "Latest"
+              }
+            ]
+          }
+        },
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "radar": [
+          {
+            "source": [
+              "dailypush.dev/:tag/trending",
+              "dailypush.dev/:tag/latest",
+              "dailypush.dev/:tag"
+            ],
+            "target": "/tag/:tag/:sort?"
+          }
+        ],
+        "name": "Tag",
+        "maintainers": [
+          "TheGeeKing"
+        ],
+        "location": "tags.ts",
+        "module": "() => import('@/routes/dailypush/tags.ts')"
+      }
+    },
+    "name": "DailyPush",
+    "apiRoutes": {},
+    "url": "dailypush.dev",
+    "description": "DailyPush aggregates trending dev articles from 200+ blogs, ranked by community signals from Hacker News, Reddit, X & more.",
+    "lang": "en",
+    "categories": [
+      "programming"
+    ]
+  },
   "damai": {
     "routes": {
       "/activity/:city/:category/:subcategory/:keyword?": {
@@ -91386,6 +91494,27 @@
   },
   "openai": {
     "routes": {
+      "/chatgpt-atlas/release-notes": {
+        "path": "/chatgpt-atlas/release-notes",
+        "categories": [
+          "program-update"
+        ],
+        "example": "/openai/chatgpt-atlas/release-notes",
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "name": "ChatGPT Atlas - Release Notes",
+        "maintainers": [
+          "xbot"
+        ],
+        "location": "chatgpt-atlas.ts",
+        "module": "() => import('@/routes/openai/chatgpt-atlas.ts')"
+      },
       "/chatgpt/release-notes": {
         "path": "/chatgpt/release-notes",
         "categories": [
@@ -133698,7 +133827,7 @@
           "requireConfig": [
             {
               "name": "YOUTUBE_KEY",
-              "description": "YouTube API Key, support multiple keys, split them with `,`, [API Key application](https://console.developers.google.com/)"
+              "description": "YouTube API Key (enable YouTube Data API v3), support multiple keys, split them with `,`, [API Key application](https://console.developers.google.com/), [YouTube Data API v3](https://console.cloud.google.com/apis/library/youtube.googleapis.com)"
             }
           ],
           "requirePuppeteer": false,
@@ -137221,6 +137350,38 @@
         "location": "kjc.ts",
         "module": "() => import('@/routes/zzu/kjc.ts')"
       },
+      "/math/:type": {
+        "path": "/math/:type",
+        "categories": [
+          "university"
+        ],
+        "example": "/zzu/math/xyxw",
+        "parameters": {
+          "type": "分类名"
+        },
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "radar": [
+          {
+            "source": [
+              "www5.zzu.edu.cn/math/"
+            ]
+          }
+        ],
+        "name": "郑大数学与统计学院",
+        "maintainers": [
+          "amandus1990"
+        ],
+        "description": "| 学院新闻 | 通知公告 | 党工团学 | 学术报告 |\n| -------- | -------- | -------- | -------- |\n| xyxw     | tzgg     | dgtx     | xsbg     |",
+        "location": "math.ts",
+        "module": "() => import('@/routes/zzu/math.ts')"
+      },
       "/news/:type": {
         "path": "/news/:type",
         "categories": [
@@ -137348,6 +137509,38 @@
         "description": "| 新闻资讯 | 通知公告 |\n| -------- | -------- |\n| xwzx     | tzgg     |",
         "location": "student.ts",
         "module": "() => import('@/routes/zzu/student.ts')"
+      },
+      "/sxy/:type": {
+        "path": "/sxy/:type",
+        "categories": [
+          "university"
+        ],
+        "example": "/zzu/sxy/xyxw",
+        "parameters": {
+          "type": "分类名"
+        },
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "radar": [
+          {
+            "source": [
+              "www5.zzu.edu.cn/sxy/"
+            ]
+          }
+        ],
+        "name": "郑大商学院",
+        "maintainers": [
+          "amandus1990"
+        ],
+        "description": "| 学院新闻 | 通知公告 | 教学科研 | 党工团学 | 讲座报告 | 学者观点 |\n| -------- | -------- | -------- | -------- | -------- | -------- |\n| xyxw     | tzgg     | jxky     | dgtx     | jzbg     | xzgd     |",
+        "location": "sxy.ts",
+        "module": "() => import('@/routes/zzu/sxy.ts')"
       },
       "/tzhb/:type": {
         "path": "/tzhb/:type",
